@@ -1,12 +1,23 @@
 import Header from "./header";
 import Footer from "./footer";
 import Note from "./note";
+import NoteList from "../notes";
+
+function CreateNote(note){
+  return (
+    <Note
+      key={note.id}
+      title={note.title}
+      content={note.content}
+    />
+  )
+}
+
 function App() {
   return (
     <div className="App">
       <Header />
-      <Note title="Title1" content="content1" />
-      <Note title="Title2" content="content2" />
+      {NoteList.map(CreateNote)}
       <Footer />
     </div>
   );
