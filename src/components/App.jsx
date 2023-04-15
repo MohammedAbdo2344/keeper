@@ -3,21 +3,17 @@ import Footer from "./footer";
 import Note from "./note";
 import NoteList from "../notes";
 
-function CreateNote(note){
-  return (
-    <Note
-      key={note.id}
-      title={note.title}
-      content={note.content}
-    />
-  )
-}
-
 function App() {
   return (
     <div className="App">
       <Header />
-      {NoteList.map(CreateNote)}
+      {NoteList.map(note =>
+        <Note
+          key={note.id}
+          title={note.title}
+          content={note.content}
+        />
+      )}
       <Footer />
     </div>
   );

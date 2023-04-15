@@ -1,6 +1,3 @@
-
-
-
 function Heading(){
     return (
       <header>
